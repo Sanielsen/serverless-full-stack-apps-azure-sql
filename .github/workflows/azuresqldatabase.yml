@@ -1,5 +1,4 @@
 name: Deploy Azure SQL Database schema
-
 on:
   push:
     branches:
@@ -8,9 +7,7 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-
 jobs:
-  
   deploy_database_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: windows-latest
